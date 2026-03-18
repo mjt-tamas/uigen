@@ -56,7 +56,7 @@ export function MainContent({ user, project }: MainContentProps) {
             <ResizableHandle className="w-[1px] bg-neutral-200 hover:bg-neutral-300 transition-colors" />
 
             {/* Right Panel - Preview/Code */}
-            <ResizablePanel defaultSize={65}>
+            <ResizablePanel defaultSize={65} className="h-full">
               <div className="h-full flex flex-col bg-white">
                 {/* Top Bar */}
                 <div className="h-14 border-b border-neutral-200/60 px-6 flex items-center justify-between bg-neutral-50/50">
@@ -75,9 +75,9 @@ export function MainContent({ user, project }: MainContentProps) {
                 </div>
 
                 {/* Content Area */}
-                <div className="flex-1 overflow-hidden bg-neutral-50">
+                <div className="flex-1 overflow-hidden bg-neutral-50 relative">
                   {activeView === "preview" ? (
-                    <div className="h-full bg-white">
+                    <div className="absolute inset-0 bg-white">
                       <PreviewFrame />
                     </div>
                   ) : (
